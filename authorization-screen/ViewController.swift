@@ -7,6 +7,30 @@
 import SnapKit
 import UIKit
 
+// MARK: - extension
+extension UITextField {
+    func setLeftIcon(_ image: UIImage) {
+        let iconView = UIImageView(frame: CGRect(x: 30, y: 8, width: 15, height: 15))
+        iconView.image = image
+        let iconContainerView: UIView = UIView(frame: CGRect(x: 20, y: 0, width: 80, height: 30))
+        iconContainerView.addSubview(iconView)
+        leftView = iconContainerView
+        leftViewMode = .always
+    }
+}
+
+extension UITextField {
+    func setRightIcon(_ image: UIImage) {
+        let iconView = UIImageView(frame: CGRect(x: 30, y: 8, width: 15, height: 15))
+        iconView.image = image
+        let iconContainerView: UIView = UIView(frame: CGRect(x: 20, y: 0, width: 80, height: 30))
+        iconContainerView.addSubview(iconView)
+        rightView = iconContainerView
+        rightViewMode = .always
+    }
+}
+
+
 class ViewController: UIViewController {
     
 // MARK: - gradient
@@ -31,9 +55,9 @@ class ViewController: UIViewController {
         label.snp.makeConstraints { maker in
             maker.left.equalToSuperview().inset(150)
             maker.top.equalToSuperview().inset(150)
-            
-            
-        }
+            }
+        let loginTextField = UITextField()
+        loginTextField.
     }
     override func viewDidLoad() {
         super.viewDidLoad()
