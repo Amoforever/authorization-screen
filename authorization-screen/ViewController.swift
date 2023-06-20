@@ -4,7 +4,7 @@
 //
 //  Created by Amahastla on 21.06.2023.
 //
-
+import SnapKit
 import UIKit
 
 class ViewController: UIViewController {
