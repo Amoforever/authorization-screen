@@ -57,7 +57,7 @@ class ViewController: UIViewController {
             maker.top.equalToSuperview().inset(150)
         }
         
-        //MARK: - firstTextField
+        //MARK: - loginTextField
         let loginTextField = UITextField()
         loginTextField.textColor = .gray
         loginTextField.textAlignment = .left
@@ -77,11 +77,11 @@ class ViewController: UIViewController {
         
         let iconImage = UIImage(systemName: "person")?.withTintColor(.lightGray, renderingMode: .alwaysOriginal)
         if let iconImage = iconImage { loginTextField.setLeftIcon(iconImage)}
-       
+        
         let markImage = UIImage(systemName: "checkmark.circle.fill")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
         if let markImage = markImage { loginTextField.setRightIcon(markImage)}
         
-        //MARK: - secondTextField
+        //MARK: - passwordTextField
         let passwordTextField = UITextField()
         passwordTextField.textColor = .gray
         passwordTextField.textAlignment = .left
@@ -100,14 +100,53 @@ class ViewController: UIViewController {
         }
         let passwordImage = UIImage(systemName: "lock")?.withTintColor(.lightGray, renderingMode: .alwaysOriginal)
         if let passwordImage = passwordImage{ passwordTextField.setLeftIcon(passwordImage)}
+        
+        //MARK: - loginButton
+        let loginButton = UIButton()
+        loginButton.backgroundColor = .systemBlue
+        loginButton.clipsToBounds = true
+        loginButton.layer.cornerRadius = 25
+        loginButton.setTitle("Login", for: .normal)
+        loginButton.setTitleColor(.white, for: .normal)
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        loginButton.layer.shadowColor = UIColor.black.cgColor
+        loginButton.layer.shadowOpacity = 0.3
+        loginButton.layer.shadowOffset = .zero
+        loginButton.layer.shadowRadius = 10
+        loginButton.layer.shouldRasterize = true
+        loginButton.layer.rasterizationScale = UIScreen.main.scale
+        view.addSubview(loginButton)
+        loginButton.snp.makeConstraints { make in
+            
+            make.top.equalTo(passwordTextField).inset(120)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(300)
+            make.height.equalTo(50)
+        }
+        //MARK: - forgotPasswordButton
+        let forgotPasswordButton = UIButton()
+        forgotPasswordButton.clipsToBounds = true
+        forgotPasswordButton.setTitle("Forgot your password?", for: .normal)
+        forgotPasswordButton.setTitleColor(.white, for: .normal)
+        forgotPasswordButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(forgotPasswordButton)
+        forgotPasswordButton.snp.makeConstraints { make in
+            
+            make.top.equalTo(loginButton).inset(50)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(300)
+            make.height.equalTo(50)
+        }
+    }
+            
+            
+            override func viewDidLoad() {
+                super.viewDidLoad()
+                view.layer.insertSublayer(gradient, at: 0)
+                initialize()
+            }
+            
             
         }
-        
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            view.layer.insertSublayer(gradient, at: 0)
-            initialize()
-        }
-        
-        
-    }
+
