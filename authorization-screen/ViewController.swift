@@ -115,6 +115,7 @@ class ViewController: UIViewController {
         loginButton.layer.shadowRadius = 10
         loginButton.layer.shouldRasterize = true
         loginButton.layer.rasterizationScale = UIScreen.main.scale
+        loginButton.addTarget(self, action: #selector(fireworks), for: .touchUpInside)
         view.addSubview(loginButton)
         loginButton.snp.makeConstraints { make in
             
@@ -129,7 +130,7 @@ class ViewController: UIViewController {
         forgotPasswordButton.setTitle("Forgot your password?", for: .normal)
         forgotPasswordButton.setTitleColor(.white, for: .normal)
         forgotPasswordButton.translatesAutoresizingMaskIntoConstraints = false
-        
+        forgotPasswordButton.addTarget(self, action: #selector(fireworks), for: .touchUpInside)
         view.addSubview(forgotPasswordButton)
         forgotPasswordButton.snp.makeConstraints { make in
             
@@ -138,7 +139,7 @@ class ViewController: UIViewController {
             make.width.equalTo(300)
             make.height.equalTo(50)
         }
-        //MARK: - buttomLabel
+        //MARK: - connectLabel
         let connectLabel = UILabel()
         connectLabel.text = "or connect with"
         connectLabel.textColor = .systemGray
@@ -193,6 +194,7 @@ view.addSubview(rightView)
         facebookButton.layer.shouldRasterize = true
         facebookButton.layer.rasterizationScale = UIScreen.main.scale
         view.addSubview(facebookButton)
+        facebookButton.addTarget(self, action: #selector(fireworks), for: .touchUpInside)
         facebookButton.snp.makeConstraints { make in
             
             make.left.equalTo(view).inset(30)
@@ -215,7 +217,7 @@ view.addSubview(rightView)
         twitterButton.layer.shadowRadius = 10
         twitterButton.layer.shouldRasterize = true
         twitterButton.layer.rasterizationScale = UIScreen.main.scale
-
+        twitterButton.addTarget(self, action: #selector(fireworks), for: .touchUpInside)
         view.addSubview(twitterButton)
         twitterButton.snp.makeConstraints { make in
 
@@ -248,7 +250,7 @@ view.addSubview(rightView)
         signUpButton.setTitle("Sign up", for: .normal)
         signUpButton.setTitleColor(.systemBlue, for: .normal)
         signUpButton.translatesAutoresizingMaskIntoConstraints = false
-        
+        signUpButton.addTarget(self, action: #selector(fireworks), for: .touchUpInside)
         view.addSubview(signUpButton)
         signUpButton.snp.makeConstraints { make in
             
@@ -258,6 +260,9 @@ view.addSubview(rightView)
             make.height.equalTo(20)
         }
 }
+    @objc func fireworks() {
+            print("Бум!")
+        }
             override func viewDidLoad() {
                 super.viewDidLoad()
                 view.layer.insertSublayer(gradient, at: 0)
