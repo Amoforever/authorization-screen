@@ -138,13 +138,92 @@ class ViewController: UIViewController {
             make.width.equalTo(300)
             make.height.equalTo(50)
         }
-    }
+        //MARK: - buttomLabel
+        let connectLabel = UILabel()
+        connectLabel.text = "or connect with"
+        connectLabel.textColor = .systemGray
+        connectLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        connectLabel.textAlignment = .center
+        connectLabel.font = UIFont.systemFont(ofSize: 14)
+        
+        view.addSubview(connectLabel)
+        
+        connectLabel.snp.makeConstraints { make in
             
+            make.top.equalTo(forgotPasswordButton).inset(150)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(150)
+            make.height.equalTo(20)
+        }
+        //MARK: - view
+        let leftView = UIView()
+        leftView.backgroundColor = .black
+        leftView.layer.cornerRadius = 15
+        
+        view.addSubview(leftView)
+        
+        leftView.snp.makeConstraints { make in
+            
+            make.top.equalTo(forgotPasswordButton).inset(150)
+//            make.centerX.equalToSuperview()
+            make.width.equalTo(10)
+            make.height.equalTo(5)
+        }
+        //MARK: - button with facebook and twitter
+        let facebookButton = UIButton()
+        facebookButton.backgroundColor = .systemTeal
+        facebookButton.clipsToBounds = true
+        facebookButton.layer.cornerRadius = 20
+        facebookButton.setTitle(" Facebook", for: .normal)
+        facebookButton.setTitleColor(.white, for: .normal)
+        facebookButton.translatesAutoresizingMaskIntoConstraints = false
+        facebookButton.layer.shadowColor = UIColor.black.cgColor
+        facebookButton.layer.shadowOpacity = 0.3
+        facebookButton.layer.shadowOffset = .zero
+        facebookButton.layer.shadowRadius = 10
+        facebookButton.layer.shouldRasterize = true
+        facebookButton.layer.rasterizationScale = UIScreen.main.scale
+        view.addSubview(facebookButton)
+        facebookButton.snp.makeConstraints { make in
+            
+            make.left.equalTo(view).inset(30)
+            make.top.equalTo(connectLabel).inset(60)
+            make.width.equalTo(160)
+            make.height.equalTo(50)
+        }
+        facebookButton.setImage(UIImage(named: "facebook"), for: UIControl.State.normal)
+
+        let twitterButton = UIButton()
+        twitterButton.backgroundColor = .systemBlue
+        twitterButton.clipsToBounds = true
+        twitterButton.layer.cornerRadius = 20
+        twitterButton.setTitle("Twitter", for: .normal)
+        twitterButton.setTitleColor(.white, for: .normal)
+        twitterButton.translatesAutoresizingMaskIntoConstraints = false
+        twitterButton.layer.shadowColor = UIColor.black.cgColor
+        twitterButton.layer.shadowOpacity = 0.3
+        twitterButton.layer.shadowOffset = .zero
+        twitterButton.layer.shadowRadius = 10
+        twitterButton.layer.shouldRasterize = true
+        twitterButton.layer.rasterizationScale = UIScreen.main.scale
+
+        view.addSubview(twitterButton)
+        twitterButton.snp.makeConstraints { make in
+
+            make.right.equalToSuperview().inset(30)
+            make.top.equalTo(connectLabel).inset(60)
+            make.width.equalTo(160)
+            make.height.equalTo(50)
+        }
+        twitterButton.setImage(UIImage(named: "twitter"), for: UIControl.State.normal)
+        
+        }
             
             override func viewDidLoad() {
                 super.viewDidLoad()
                 view.layer.insertSublayer(gradient, at: 0)
                 initialize()
+                
             }
             
             
