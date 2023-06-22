@@ -216,6 +216,38 @@ class ViewController: UIViewController {
             make.height.equalTo(50)
         }
         twitterButton.setImage(UIImage(named: "twitter"), for: UIControl.State.normal)
+       //MARK: - last label
+        let havenotaccount = UILabel()
+        havenotaccount.text = "Dont have account?"
+        havenotaccount.textColor = .systemGray
+        havenotaccount.font = UIFont.preferredFont(forTextStyle: .headline)
+        havenotaccount.textAlignment = .center
+        havenotaccount.font = UIFont.systemFont(ofSize: 14)
+        
+        view.addSubview(havenotaccount)
+        
+        havenotaccount.snp.makeConstraints { make in
+            
+            make.top.equalTo(facebookButton).inset(80)
+            make.left.equalToSuperview().inset(70)
+            make.width.equalTo(150)
+            make.height.equalTo(20)
+        }
+        //MARK: - sign up button
+        let signUpButton = UIButton()
+        signUpButton.clipsToBounds = true
+        signUpButton.setTitle("Sign up", for: .normal)
+        signUpButton.setTitleColor(.systemBlue, for: .normal)
+        signUpButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(signUpButton)
+        signUpButton.snp.makeConstraints { make in
+            
+            make.top.equalTo(twitterButton).inset(80)
+            make.right.equalToSuperview().inset(70)
+            make.width.equalTo(150)
+            make.height.equalTo(20)
+        }
         
         }
             
