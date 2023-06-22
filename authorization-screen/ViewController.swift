@@ -152,23 +152,32 @@ class ViewController: UIViewController {
             
             make.top.equalTo(forgotPasswordButton).inset(150)
             make.centerX.equalToSuperview()
-            make.width.equalTo(150)
+            make.width.equalTo(120)
             make.height.equalTo(20)
         }
         //MARK: - view
-        let leftView = UIView()
-        leftView.backgroundColor = .black
-        leftView.layer.cornerRadius = 15
-        
+
+                let leftView = UIView()
+                leftView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.3)
+                leftView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(leftView)
-        
         leftView.snp.makeConstraints { make in
-            
-            make.top.equalTo(forgotPasswordButton).inset(150)
-//            make.centerX.equalToSuperview()
-            make.width.equalTo(10)
-            make.height.equalTo(5)
+            make.left.equalToSuperview().offset(30)
+            make.top.equalTo(forgotPasswordButton).offset(160)
+            make.width.equalTo(110)
+            make.height.equalTo(3)
         }
+        
+        let rightView = UIView()
+        rightView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.3)
+        rightView.translatesAutoresizingMaskIntoConstraints = false
+view.addSubview(rightView)
+        rightView.snp.makeConstraints { make in
+    make.right.equalTo(connectLabel).offset(110)
+    make.top.equalTo(forgotPasswordButton).offset(160)
+    make.width.equalTo(110)
+    make.height.equalTo(3)
+}
         //MARK: - button with facebook and twitter
         let facebookButton = UIButton()
         facebookButton.backgroundColor = .systemTeal
@@ -248,16 +257,11 @@ class ViewController: UIViewController {
             make.width.equalTo(150)
             make.height.equalTo(20)
         }
-        
-        }
-            
+}
             override func viewDidLoad() {
                 super.viewDidLoad()
                 view.layer.insertSublayer(gradient, at: 0)
                 initialize()
-                
             }
-            
-            
-        }
+}
 
