@@ -13,6 +13,7 @@
 		CEEAE2682A425ADF003BD92E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEAE2662A425ADF003BD92E /* Main.storyboard */; };
 		CEEAE26A2A425AE0003BD92E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEAE2692A425AE0003BD92E /* Assets.xcassets */; };
 		CEEAE26D2A425AE0003BD92E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEAE26B2A425AE0003BD92E /* LaunchScreen.storyboard */; };
+		CEEAE2762A425BE2003BD92E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEEAE2752A425BE2003BD92E /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEEAE2762A425BE2003BD92E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = "authorization-screen";
+			packageProductDependencies = (
+				CEEAE2752A425BE2003BD92E /* SnapKit */,
+			);
 			productName = "authorization-screen";
 			productReference = CEEAE25D2A425ADF003BD92E /* authorization-screen.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = CEEAE2542A425ADF003BD92E;
+			packageReferences = (
+				CEEAE2742A425BE2003BD92E /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = CEEAE25E2A425ADF003BD92E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -356,6 +364,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEEAE2742A425BE2003BD92E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEEAE2752A425BE2003BD92E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEEAE2742A425BE2003BD92E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CEEAE2552A425ADF003BD92E /* Project object */;
 }
